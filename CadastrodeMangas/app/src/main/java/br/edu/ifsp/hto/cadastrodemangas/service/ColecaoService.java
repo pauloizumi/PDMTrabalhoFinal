@@ -5,6 +5,8 @@ import java.util.List;
 import br.edu.ifsp.hto.cadastrodemangas.domain.Colecao;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -17,10 +19,15 @@ public interface ColecaoService {
     @GET("colecao/list")
     Call<List<Colecao>> listarcolecao();
 
+
+    @FormUrlEncoded
+    @POST("colecao/new")
+    Call<Colecao> criarColecao(@Field("nome")String nome, @Field("categoria")String categoria);
+
     @Multipart
     @POST("colecao/new")
     Call<Colecao> criarColecao(@Part("foto") RequestBody image,
-                                   @Part("calecao") Colecao colecao);
+                                   @Part("colecao") Colecao colecao);
 }
 
 

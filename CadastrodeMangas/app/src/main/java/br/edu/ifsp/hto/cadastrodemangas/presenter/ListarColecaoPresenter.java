@@ -18,9 +18,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by paulo on 06/14/16.
  */
 public class ListarColecaoPresenter {
-    public static String baseURL = "http://192.168.1.6:9090/";
+    public static String baseURL = "http://192.168.25.2:8090/";
 
-    public void listarcolecoes(final Context context, final ListView listView) {
+    public static void listarcolecoes(final Context context, final ListView listView) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -29,7 +29,9 @@ public class ListarColecaoPresenter {
 
         ColecaoService service = retrofit.create(ColecaoService.class);
         Call<List<Colecao>> call = service.listarcolecao();
-        call.enqueue(new Callback<List<Colecao>>() {
+
+        call.enqueue(new retrofit2.Callback<List<Colecao>>() {
+
             @Override
             public void onResponse(Call<List<Colecao>> call, Response<List<Colecao>> response) {
 
@@ -39,7 +41,7 @@ public class ListarColecaoPresenter {
 
             @Override
             public void onFailure(Call<List<Colecao>> call, Throwable t) {
-
+                t.printStackTrace();
             }
 
 

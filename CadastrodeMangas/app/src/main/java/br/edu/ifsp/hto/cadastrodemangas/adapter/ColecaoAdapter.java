@@ -31,21 +31,29 @@ public class ColecaoAdapter extends BaseAdapter {
         this.context = context;
         this.colecoes = colecoes;
     }
+    public int getItemCount() {
 
-        @Override
-        public int getCount() {
-            return colecoes != null ? colecoes.size() : 0;
-        }
+        return this.colecoes != null ? this.colecoes.size() : 0;
+    }
 
-        @Override
-        public Object getItem(int position) {
-            return colecoes.get(position);
-        }
+    @Override
+    public int getCount() {
 
-        @Override
-        public long getItemId(int position) {
-            return colecoes.get(position).getId();
-        }
+        return this.colecoes.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+
+        return this.colecoes.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+
+        return this.colecoes.get(position).getId();
+    }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

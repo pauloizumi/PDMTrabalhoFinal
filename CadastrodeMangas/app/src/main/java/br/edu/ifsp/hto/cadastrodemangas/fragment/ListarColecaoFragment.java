@@ -30,9 +30,11 @@ public class ListarColecaoFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_listar_colecao, container, false);
 
-        ListarColecaoPresenter listarcolecaopresenter = new ListarColecaoPresenter();
-        listarcolecaopresenter.listarcolecoes(getContext(), mList);
+        mList = (ListView) view.findViewById(R.id.listView);
 
+       // ListarColecaoPresenter listarColecaoPresenter = new ListarColecaoPresenter();
+
+        ListarColecaoPresenter.listarcolecoes(getContext(), mList);
         return view;
     }
 

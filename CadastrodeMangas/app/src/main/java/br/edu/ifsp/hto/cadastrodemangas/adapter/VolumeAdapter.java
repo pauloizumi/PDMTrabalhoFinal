@@ -28,16 +28,19 @@ public class VolumeAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
+
         return volumes != null ? volumes.size() : 0;
     }
 
     @Override
     public Object getItem(int position) {
+
         return volumes.get(position);
     }
 
     @Override
     public long getItemId(int position) {
+
         return volumes.get(position).getId();
     }
 
