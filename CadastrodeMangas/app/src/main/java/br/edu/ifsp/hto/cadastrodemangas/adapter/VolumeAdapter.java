@@ -26,22 +26,27 @@ public class VolumeAdapter extends BaseAdapter {
         this.volumes = volumes;
 
     }
+    public int getItemCount() {
+
+        return this.volumes != null ? this.volumes.size() : 0;
+    }
+
     @Override
     public int getCount() {
 
-        return volumes != null ? volumes.size() : 0;
+        return this.volumes.size();
     }
 
     @Override
     public Object getItem(int position) {
 
-        return volumes.get(position);
+        return this.volumes.get(position);
     }
 
     @Override
     public long getItemId(int position) {
 
-        return volumes.get(position).getId();
+        return this.volumes.get(position).getId();
     }
 
     @Override

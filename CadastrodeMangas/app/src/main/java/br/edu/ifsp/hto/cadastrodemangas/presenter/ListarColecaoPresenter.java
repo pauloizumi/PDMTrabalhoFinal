@@ -40,8 +40,8 @@ public class ListarColecaoPresenter {
             }
 
             @Override
-            public void onFailure(Call<List<Colecao>> call, Throwable t) {
-                t.printStackTrace();
+            public void onFailure(Call<List<Colecao>> call, Throwable t){
+            t.printStackTrace();
             }
 
 

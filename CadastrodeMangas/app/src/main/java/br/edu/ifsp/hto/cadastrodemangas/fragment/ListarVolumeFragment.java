@@ -30,6 +30,9 @@ public class ListarVolumeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_listar_volume, container, false);
 
+        mList = (ListView) view.findViewById(R.id.listViewVolume);
+
+
         ListarVolumePresenter listarVolumePresenter = new ListarVolumePresenter();
         listarVolumePresenter.listarVolumes(getContext(), mList);
 

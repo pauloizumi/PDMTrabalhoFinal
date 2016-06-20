@@ -6,6 +6,7 @@ import android.widget.ListView;
 import java.util.List;
 
 import br.edu.ifsp.hto.cadastrodemangas.adapter.ColecaoAdapter;
+import br.edu.ifsp.hto.cadastrodemangas.adapter.VolumeAdapter;
 import br.edu.ifsp.hto.cadastrodemangas.domain.Colecao;
 import br.edu.ifsp.hto.cadastrodemangas.domain.Volume;
 import br.edu.ifsp.hto.cadastrodemangas.service.ColecaoService;
@@ -31,17 +32,18 @@ public class ListarVolumePresenter {
 
         VolumeService service = retrofit.create(VolumeService.class);
         Call<List<Volume>> call = service.listarvolumes();
-        call.enqueue(new Callback<List<Volume>>() {
+
+        call.enqueue(new retrofit2.Callback<List<Volume>>() {
             @Override
             public void onResponse(Call<List<Volume>> call, Response<List<Volume>> response) {
 
                 List<Volume> list = response.body();
-                listView.setAdapter(new ColecaoAdapter(context, list));
+                listView.setAdapter(new VolumeAdapter(context, list));
             }
 
             @Override
             public void onFailure(Call<List<Volume>> call, Throwable t) {
-
+                t.printStackTrace();
             }
 
 
