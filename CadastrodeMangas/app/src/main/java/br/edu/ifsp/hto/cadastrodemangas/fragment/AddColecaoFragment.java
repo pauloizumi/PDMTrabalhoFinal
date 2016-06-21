@@ -76,7 +76,7 @@ public class AddColecaoFragment extends Fragment {
        return view;
     }
     public void gravarColecao() {
-        String baseURL =  "http://192.168.25.2:8090/";
+        String baseURL =  "http://192.168.120.9:8090/";
 
         EditText eNome =(EditText) getView().findViewById(R.id.eNome);
         EditText eCategoria = (EditText) getView().findViewById(R.id.eCategoria);
@@ -104,7 +104,7 @@ public class AddColecaoFragment extends Fragment {
 
         ColecaoService service = retrofit.create(ColecaoService.class);
 
-        Call<Colecao> call = service.criarColecao(colecao.getNome(),colecao.getCategoria());
+        Call<Colecao> call = service.criarcolecao(fbody, colecao);
 
         call.enqueue(new Callback<Colecao>() {
             @Override

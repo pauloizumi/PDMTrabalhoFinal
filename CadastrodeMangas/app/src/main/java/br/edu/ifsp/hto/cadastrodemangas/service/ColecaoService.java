@@ -20,11 +20,11 @@ public interface ColecaoService {
     Call<List<Colecao>> listarcolecao();
 
 
-    @FormUrlEncoded
     @Multipart
     @POST("colecao/new")
-    Call<Colecao> criarColecao(@Part("foto") RequestBody image, @Part("colecao") Colecao colecao);
-    Call<Colecao> criarColecao(@Field("nome")String nome, @Field("categoria")String categoria);
+    Call<Colecao> criarcolecao(@Part("foto") RequestBody image,
+                                @Part("colecao") Colecao colecao);
+
 }
 
 

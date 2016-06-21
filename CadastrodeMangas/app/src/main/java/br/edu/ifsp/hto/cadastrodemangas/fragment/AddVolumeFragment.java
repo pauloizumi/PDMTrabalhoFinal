@@ -33,7 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AddVolumeFragment extends Fragment {
     private Context context;
     private ListView listView;
-    private String baseURL = "http://192.168.25.2:8090/";
+    private String baseURL = "http://192.168.120.9:8090/";
     private Spinner deps;
 
     public AddVolumeFragment() {
@@ -56,7 +56,7 @@ public class AddVolumeFragment extends Fragment {
         });
         return view;
     }
-    private void listarDepartamentos() {
+    private void listarColecoes() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -67,11 +67,11 @@ public class AddVolumeFragment extends Fragment {
         listCall.enqueue(new Callback<List<Colecao>>() {
             @Override
             public void onResponse(Call<List<Colecao>> call, Response<List<Colecao>> response) {
-                final List<Colecao> colecaos = response.body();
-                String array_spinner[] = new String[colecaos.size()];
+                final List<Colecao> colecoes = response.body();
+                String array_spinner[] = new String[colecoes.size()];
 
-                for (int i = 0; i < colecaos.size(); i++) {
-                    Colecao colecao = colecaos.get(i);
+                for (int i = 0; i < colecoes.size(); i++) {
+                    Colecao colecao = colecoes.get(i);
                     array_spinner[i] = colecao.getNome();
 
                 }
@@ -89,7 +89,7 @@ public class AddVolumeFragment extends Fragment {
         });
     }
     public void gravarVolume() {
-        String baseURL =  "http://192.168.25.2:8090/";
+        String baseURL =  "http://192.168.120.9:8090/";
 
         EditText eVolume = (EditText) getView().findViewById(R.id.eVolume);
 
