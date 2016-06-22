@@ -26,16 +26,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gravar"
+        android:layout_gravity="center"
+        android:id="@+id/btAddVolume"
+        android:clickable="true" />
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/listViewAddVolume"/>
 
-    <Button
-        android:id="@+id/btAddVolume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="Cadastrar" />
+
 
 </LinearLayout>

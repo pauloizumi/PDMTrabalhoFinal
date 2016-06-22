@@ -21,8 +21,11 @@ public interface VolumeService {
     @GET("volume/list")
     Call<List<Volume>> listarvolumes();
 
-    @FormUrlEncoded
+
     @POST("volume/new")
     Call<Volume> criarVolume(@Field("volume")String volume);
 }
+
+
+
 

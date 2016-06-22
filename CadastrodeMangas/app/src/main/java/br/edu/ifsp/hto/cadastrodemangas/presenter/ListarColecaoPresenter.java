@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by paulo on 06/14/16.
  */
 public class ListarColecaoPresenter {
-    public static String baseURL = "http://192.168.120.9:8090/";
+    public static String baseURL = "http://192.168.25.2:8090/";
 
     public static void listarcolecoes(final Context context, final ListView listView) {
         Retrofit retrofit = new Retrofit.Builder()

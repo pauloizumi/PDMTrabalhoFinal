@@ -33,7 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AddVolumeFragment extends Fragment {
     private Context context;
     private ListView listView;
-    private String baseURL = "http://192.168.120.9:8090/";
+    private String baseURL = "http://192.168.25.2:8090/";
     private Spinner deps;
 
     public AddVolumeFragment() {
@@ -94,12 +94,13 @@ public class AddVolumeFragment extends Fragment {
         });
     }
     public void gravarVolume() {
-        String baseURL =  "http://192.168.120.9:8090/";
-
+        String baseURL =  "http://192.168.25.2:8090/";
+        int idDep = deps.getSelectedItemPosition();
         EditText eVolume = (EditText) getView().findViewById(R.id.eVolume);
 
         Volume volume = new Volume();
         volume.setVolume(eVolume.getText().toString());
+        volume.setId_colecao(idDep);
 
         eVolume.setText("");
 
