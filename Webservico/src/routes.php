@@ -72,7 +72,15 @@ $app->post('/colecao/new', function ($request, $response) {
  	return $response->withJson($insertColecao);
 });
 
+$app->get('/volume/list', function ($request, $response) {
 
+	$db = $this->db;
+	foreach($db->query('SELECT * FROM volume') as $row){
+		$return[] = $row;
+	};
+
+	return $response->withJson($return);
+});
 
 
 
