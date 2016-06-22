@@ -54,6 +54,11 @@ public class AddVolumeFragment extends Fragment {
                 gravarVolume();
             }
         });
+
+        context = container.getContext();
+
+        listarColecoes();
+
         return view;
     }
     private void listarColecoes() {
